@@ -29,13 +29,13 @@ const style = css`
     }
 
     .post-title {
-        padding-bottom: 3px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         color: var(--primary-text-color);
         text-decoration: none;
     }
 
     .post-details {
-        margin-top: 3px;
         display: flex;
         justify-content: space-between;
     }
@@ -43,6 +43,7 @@ const style = css`
     .post-comments, .post-subreddit, .post-time, .post-score {
         color: var(--primary-color);
         text-decoration: none;
+        margin-top: 5px;
     }
 `;
 

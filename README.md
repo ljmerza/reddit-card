@@ -24,6 +24,7 @@ custom_updater:
 | header | string or boolean | **Optional** | `list of subreddits` Custom header or set to `false` to disable
 | entities | list | **Required** | List of reddit sensors to display
 | new_tab | boolean | **Optional** | `true` open comments, subreddit, and link in new tab
+| max | number | **Optional** | `10` max number of posts to show for each subreddit
 
 <h2>Configuration</h2>
 
@@ -33,7 +34,7 @@ In your ui-lovelace.yaml
 
 ```yaml
 resources:
-  - url: /local/reddit-card/reddit-card.js?track=true
+  - url: /local/reddit-card.js?track=true
     type: module
 ```
 
@@ -43,6 +44,7 @@ Add the custom card to views:
 views:
   - type: custom:reddit-card
     entities:
-    - sensor.reddit_news
-    - sensor.reddit_worldnews
+      - sensor.reddit_news
+      - sensor.reddit_worldnews
+    max: 3
 ```

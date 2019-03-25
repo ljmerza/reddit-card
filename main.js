@@ -26,6 +26,7 @@ class RedditCard extends LitElement {
       entities: [],
       header: '',
       new_tab: true,
+      max: 10,
       ...config,
     };
 
@@ -80,21 +81,26 @@ class RedditCard extends LitElement {
     `;
   }
 
+  /**
+   * create time ago string from an epoch time
+   * @param {Epoch} created
+   * @return {string}
+   */
   timeAgoFormatter(created) {
     return moment(created * 1000).fromNow(true);
   }
 
   /**
-   *
-   * @param {*} num
+   * format a number over 1,000 with k format
+   * @param {string|integer} num
    */
   kFormatter(num) {
     return num > 999 ? `${(num / 1000).toFixed(1)}k` : num;
   }
 
   /**
-   *
-   * @param {*} entities
+   * create card header
+   * @param {TemplateResult} entities
    */
   createHeader(entities) {
     if (this.config.header === false) return html``;
@@ -109,7 +115,8 @@ class RedditCard extends LitElement {
   }
 
   /**
-   *
+   * get all subreddit data
+   * @return {Array<RedditSensor>}
    */
   getEntityData() {
     return this.config.entities
@@ -120,16 +127,17 @@ class RedditCard extends LitElement {
   /**
    * combines all posts for all entities found
    * @param {RedditSensorEntity} entities
+   * @return {Array<Object>}
    */
   getAllPosts(entities) {
     // first find how many positions we are going to have to interate on posts
-    const maxPosts = Math.max(...entities.map(entity => entity.attributes.posts.length));
-
+    const maxPosts = this.config.max || Math.max(...entities.map(entity => entity.attributes.posts.length));
+    
     // for each position grab that posts position for each subreddit we've subscribed to
     const allPosts = [];
 
-    for (let i = 0; i < maxPosts; i++) {
-      entities.forEach((entity) => {
+    for (let i=0; i<maxPosts; i++) {
+      entities.forEach(entity => {
         const post = entity.attributes.posts[i];
         post.subreddit = entity.attributes.subreddit;
         allPosts.push(post);
