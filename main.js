@@ -65,7 +65,7 @@ class RedditCard extends LitElement {
             <div class='post-score'>${this.kFormatter(post.score)}</div>
             <a href='${subredditLink}' class='post-subreddit' target='${this.target}'>${post.subreddit}</a>
             <div class='post-time'>${this.timeAgoFormatter(post.created)}</div>
-            <a href='${subredditLink}/${post.id}' class='post-comments' target='${this.target}'>${post.comms_num} comments</a>
+            <a href='${subredditLink}/comments/${post.id}' class='post-comments' target='${this.target}'>${post.comms_num} comments</a>
           </div>
         </div>
       `;
@@ -131,13 +131,14 @@ class RedditCard extends LitElement {
    */
   getAllPosts(entities) {
     // first find how many positions we are going to have to interate on posts
-    const maxPosts = this.config.max || Math.max(...entities.map(entity => entity.attributes.posts.length));
-    
+    const maxPosts = this.config.max
+      || Math.max(...entities.map(entity => entity.attributes.posts.length));
+
     // for each position grab that posts position for each subreddit we've subscribed to
     const allPosts = [];
 
-    for (let i=0; i<maxPosts; i++) {
-      entities.forEach(entity => {
+    for (let i = 0; i < maxPosts; i++) {
+      entities.forEach((entity) => {
         const post = entity.attributes.posts[i];
         post.subreddit = entity.attributes.subreddit;
         allPosts.push(post);

@@ -50,7 +50,7 @@
             <div class='post-score'>${this.kFormatter(e.score)}</div>
             <a href='${t}' class='post-subreddit' target='${this.target}'>${e.subreddit}</a>
             <div class='post-time'>${this.timeAgoFormatter(e.created)}</div>
-            <a href='${t}/${e.id}' class='post-comments' target='${this.target}'>${e.comms_num} comments</a>
+            <a href='${t}/comments/${e.id}' class='post-comments' target='${this.target}'>${e.comms_num} comments</a>
           </div>
         </div>
       `});return j`
