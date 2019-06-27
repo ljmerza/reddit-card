@@ -1,9 +1,0 @@
-{
-  "reddit-card": {
-    "updated_at": "2019-03-14",
-    "version": "1.0.0",
-    "remote_location": "https://raw.githubusercontent.com/ljmerza/reddit-card/master/reddit-card.js",
-    "visit_repo": "https://github.com/ljmerza/reddit-card",
-    "changelog": "https://github.com/ljmerza/reddit-card/releases/latest"
-  }
-}
