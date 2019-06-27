@@ -20,11 +20,11 @@ resources:
 ---
 ```yaml
 views:
-  - type: custom:reddit-card
-    entities:
-      - sensor.reddit_news
-      - sensor.reddit_worldnews
-    max: 3
+type: custom:reddit-card
+entities:
+  - sensor.reddit_news
+  - sensor.reddit_worldnews
+max: 3
 ```
 
 ## Options:
