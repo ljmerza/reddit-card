@@ -6,6 +6,7 @@ Show your favorite subreddits in Home Assistant
 [![GitHub Release][releases-shield]][releases]
 [![License][license-shield]](LICENSE.md)
 ![Project Maintenance][maintenance-shield]
+[![hacs_badge](https://img.shields.io/badge/HACS-Default-orange.svg?style=for-the-badge)](https://github.com/custom-components/hacs)
 
 ## Installation through [HACS](https://github.com/custom-components/hacs)
 ---
