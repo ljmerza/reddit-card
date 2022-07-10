@@ -1,5 +1,6 @@
 {
     "name": "Reddit Card",
     "render_readme": true,
-    "filename": "dist/reddit-card.js"
+    "content_in_root": true,
+    "filename": "reddit-card.js"
 }
