@@ -1,6 +1,6 @@
 {
     "name": "reddit-card",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "A reddit card for Home Assistant Lovelace UI",
     "keywords": [
         "home-assistant",
