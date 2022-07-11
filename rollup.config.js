@@ -5,7 +5,7 @@ import { terser } from "rollup-plugin-terser";
 export default {
     input: 'main.js',
     output: {
-        file: 'dist/reddit-card.js',
+        file: 'reddit-card.js',
         format: 'umd'
     },
     plugins: [
